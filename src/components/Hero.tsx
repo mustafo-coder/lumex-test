@@ -1,13 +1,14 @@
 "use client";
-import React from "react";
-import MatrixBG from "./MatrixBG";
+import { Typewriter } from "react-simple-typewriter";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 const Hero = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
+
   return (
-    <div className="w-full h-screen p-10 ">
+    <div className="w-full h-screen pt-20 p-10 bg-secondary">
       <div className="relative container 2xl:max-w-[1920px] mx-auto z-0 w-full h-full overflow-hidden">
         <motion.div
           style={{ y }}
@@ -41,7 +42,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        <MatrixBG />
+        <Image src={'/matrix.png'} alt="matrix" fill className="opacity-70 -z-10"/>
 
         <div>
           <span className="w-5 top-0 left-0 aspect-square border-t-2 border-l-2 border-[#07E0B0] absolute inline-block"></span>
@@ -57,9 +58,16 @@ const Hero = () => {
           transition={{ delay: 1, duration: 1.5 }}
           className="bottom-10 absolute text-white text-sm left-10 backdrop-blur-lg w-0 h-0"
         >
-          <p className="w-full overflow-hidden h-full">
-            With elite engineering talent and deep industry expertise, we build
-            digital products that drive growth and innovation.
+          <p className="w-full font-[300] overflow-hidden h-full">
+            <Typewriter
+              words={[
+                `With elite engineering talent and deep industry expertise, we build
+            digital products that drive growth and innovation.`,
+              ]}
+              cursor
+              cursorStyle="|"
+              typeSpeed={10}
+            />
           </p>
           <span className="w-3 -translate-y-full -translate-x-full aspect-square bg-primary top-0 left-0 absolute inline-block"></span>
           <span className="w-3 translate-y-full -translate-x-full aspect-square bg-primary bottom-0 left-0 absolute inline-block"></span>
@@ -74,9 +82,16 @@ const Hero = () => {
           transition={{ delay: 1, duration: 1.5 }}
           className="bottom-10 absolute text-white text-sm right-10 backdrop-blur-lg w-0 h-0"
         >
-          <p className="w-full overflow-hidden h-full">
-            At 10x Code Lab, we don’t just code— we craft scalable, high-impact
-            solutions.
+          <p className="w-full font-[300] overflow-hidden h-full">
+            <Typewriter
+              words={[
+                `At 10x Code Lab, we don’t just code— we craft scalable, high-impact
+            solutions.`,
+              ]}
+              cursor
+              cursorStyle="|"
+              typeSpeed={10}
+            />
           </p>
           <span className="w-3 -translate-y-full -translate-x-full aspect-square bg-primary top-0 left-0 absolute inline-block"></span>
           <span className="w-3 translate-y-full -translate-x-full aspect-square bg-primary bottom-0 left-0 absolute inline-block"></span>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Orbitron, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components";
 
 const orbitron = Orbitron({
   variable: "--font-orbitron",
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body
         className={`${orbitron.variable} ${ibm.variable} font-ibm antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

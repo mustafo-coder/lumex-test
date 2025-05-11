@@ -7,9 +7,28 @@
   --color-secondary: #030F0A;
 }
 
+@layer components{
+  .btn{
+    @apply cursor-pointer relative border-2 border-primary px-8 py-3 rounded text-white/80 flex gap-2 transition-all bg-secondary;
+  }
+  .btn:hover span:first-child{
+    @apply left-2;
+  }
+  .btn:hover span:last-child{
+    @apply right-2;
+  }
+  .btn span:first-child{
+    @apply absolute top-1/2 -translate-y-1/2 transition-all left-4;
+  }
+  .btn span:last-child{
+    right: 15px;
+    @apply absolute top-1/2 -translate-y-1/2 transition-all right-4;
+  }
+}
+
 body {
   overflow-x: hidden;
-  background: #030F0A;
+  background: #030F0A url('/bg-code.png') no-repeat center/cover;
 }
 
 .custom-animate-spin {
