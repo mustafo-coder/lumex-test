@@ -28,103 +28,105 @@ const About = () => {
 
   return (
     <div ref={ref} className={`h-screen w-full relative bg-secondary/70`}>
-      <div
-        className={`absolute transition-all duration-700 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[70%] h-[80%] ${
-          hasAnimated ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <motion.h2
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5 }}
-          className="top-14 font-orbitron absolute -translate-x-1/2 left-1/2 text-white uppercase text-center text-2xl"
+      <div className="container">
+        <div
+          className={`absolute transition-all duration-700 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[1300px] max-w-[90%] h-[80%] ${
+            hasAnimated ? "opacity-100" : "opacity-0"
+          }`}
         >
-          Driven by passion <br />
-          defind by excellence
-        </motion.h2>
-        <button className="absolute bottom-10 z-50 left-1/2 -translate-x-1/2 btn">
-          <span>[</span> about <span>]</span>
-        </button>
-        {type && (
-          <>
-            <pre className="absolute text-white/70 bottom-[20%] end-0 min-w-sm">
-              <Typewriter
-                words={[
-                  `.core-values {
+          <motion.h2
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5 }}
+            className="top-14 font-orbitron z-20 absolute -translate-x-1/2 left-1/2 text-white uppercase text-center text-2xl"
+          >
+            Driven by passion <br />
+            defind by excellence
+          </motion.h2>
+          <button className="absolute bottom-10 z-50 left-1/2 -translate-x-1/2 btn">
+            <span>[</span> about <span>]</span>
+          </button>
+          {type && (
+            <>
+              <pre className="absolute max-xl:bottom-10 text-white/70 bottom-[20%] end-0 min-w-sm">
+                <Typewriter
+                  words={[
+                    `.core-values {
   attention-to-detail: true;
   innovation: relentless;
   approach: "Always pushing boundaries";
 }`,
-                ]}
-                cursor
-                cursorStyle="|"
-                typeSpeed={5}
-              />
-            </pre>
-            <pre className="absolute text-white/70 top-[25%] start-0">
-              <Typewriter
-                words={[
-                  `.design-philosophy {
+                  ]}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={5}
+                />
+              </pre>
+              <pre className="absolute max-xl:top-30 text-white/70 top-[25%] start-0">
+                <Typewriter
+                  words={[
+                    `.design-philosophy {
   pixel: "crafted with purpose";
   code: "written with precision";
   interaction: "engineered for impact";
   fusion: "art + function";
 }`,
-                ]}
-                cursor
-                cursorStyle="|"
-                typeSpeed={5}
-              />
-            </pre>
-          </>
-        )}
-        <Image
-          src={"/top-line.png"}
-          alt="top line"
-          className="w-full absolute top-0 left-0"
-          width={1920}
-          height={30}
-        />
-        <Image
-          src={"/bottom-line.png"}
-          alt="bottom line"
-          className="w-full bottom-0 left-0 absolute"
-          width={1920}
-          height={30}
-        />
-        <motion.div
-          viewport={{ once: true }}
-          whileInView={{ display: "none" }}
-          initial={{ display: "block" }}
-          className="w-full h-full"
-          transition={{ delay: 7 }}
-        >
+                  ]}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={5}
+                />
+              </pre>
+            </>
+          )}
+          <Image
+            src={"/top-line.png"}
+            alt="top line"
+            className="w-full absolute top-0 left-0"
+            width={1920}
+            height={30}
+          />
+          <Image
+            src={"/bottom-line.png"}
+            alt="bottom line"
+            className="w-full bottom-0 left-0 absolute"
+            width={1920}
+            height={30}
+          />
           <motion.div
-            initial={{ width: 0 }}
-            transition={{ duration: 4, delay: 1 }}
             viewport={{ once: true }}
-            whileInView={{ width: "100%" }}
+            whileInView={{ display: "none" }}
+            initial={{ display: "block" }}
             className="w-full h-full"
+            transition={{ delay: 7 }}
           >
             <motion.div
-              initial={{ opacity: 1 }}
+              initial={{ width: 0 }}
+              transition={{ duration: 4, delay: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 2, delay: 5 }}
-              whileInView={{ opacity: 0 }}
-              className="w-full h-full relative bg-gradient-to-r to-primary/60 from-transparent"
+              whileInView={{ width: "100%" }}
+              className="w-full h-full"
             >
-              <div className="bg-primary w-1 h-full absolute top-0 right-0">
-                <span className="inline-block text-5xl absolute -translate-x-[35%] top-0 -translate-y-[80%] text-primary">
-                  <TriangleDownIcon className="scale-150" />
-                </span>
-                <span className="inline-block text-5xl absolute -translate-x-[35%] bottom-0 translate-y-[80%] text-primary">
-                  <TriangleUpIcon className="scale-150" />
-                </span>
-              </div>
+              <motion.div
+                initial={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 2, delay: 5 }}
+                whileInView={{ opacity: 0 }}
+                className="w-full h-full relative bg-gradient-to-r to-primary/60 from-transparent"
+              >
+                <div className="bg-primary w-1 h-full absolute top-0 right-0">
+                  <span className="inline-block text-5xl absolute -translate-x-[35%] top-0 -translate-y-[80%] text-primary">
+                    <TriangleDownIcon className="scale-150" />
+                  </span>
+                  <span className="inline-block text-5xl absolute -translate-x-[35%] bottom-0 translate-y-[80%] text-primary">
+                    <TriangleUpIcon className="scale-150" />
+                  </span>
+                </div>
+              </motion.div>
             </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

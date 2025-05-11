@@ -5,11 +5,11 @@ import React from "react";
 const Navbar = () => {
   return (
     <nav className="fixed top-0 end-0 start-0 z-[99999999] bg-secondary">
-      <div className="container py-3 mx-auto flex justify-between items-center lg:max-w-[1920px] px-10">
+      <div className="container py-3 flex justify-between items-center px-10">
         <Link href={"/"} className="">
           <Image alt="logo" width={100} height={50} src="/logo.svg" />
         </Link>
-        <ul className="flex text-sm gap-5 items-center">
+        <ul className="flex font-[300] max-xl:hidden text-sm gap-5 items-center">
           <li>
             <Link href={"/"} className="btn">
               <span>[</span> work <span>]</span>

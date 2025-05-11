@@ -7,6 +7,12 @@
   --color-secondary: #030F0A;
 }
 
+@utility container{
+  margin-inline: auto;
+  padding-inline: 20px;
+  max-width: 1920px
+}
+
 @layer components{
   .btn{
     @apply cursor-pointer relative border-2 border-primary px-8 py-3 rounded text-white/80 flex gap-2 transition-all bg-secondary;
