@@ -1,5 +1,9 @@
 import React from "react";
-import { About, Cube, Hero } from "@/components";
+import { Cube } from "@/components";
+import dynamic from "next/dynamic";
+
+const About = dynamic(() => import("@/components/About"));
+const Hero = dynamic(() => import("@/components/Hero"));
 
 const page = () => {
   return (
