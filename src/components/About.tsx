@@ -1,4 +1,5 @@
 "use client";
+import { BottomLineImage, TopLine } from "@/assets";
 import { TriangleDownIcon, TriangleUpIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -70,14 +71,14 @@ const About = () => {
 
           {/* Cordinate lines */}
           <Image
-            src="/top-line.png"
+            src={TopLine}
             alt="top line"
             className="w-full absolute top-0 left-0"
             width={1920}
             height={30}
           />
           <Image
-            src="/bottom-line.png"
+            src={BottomLineImage}
             alt="bottom line"
             className="w-full absolute bottom-0 left-0"
             width={1920}

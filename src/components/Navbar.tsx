@@ -1,3 +1,4 @@
+import { DotsImage } from "@/assets";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -62,7 +63,7 @@ const Navbar = () => {
           <span className="border-t-2 border-primary bg-secondary w-10 absolute z-10 -bottom-6 -right-5 -rotate-45 aspect-square inline-block"></span>
           <Image
             className="absolute end-0 top-0"
-            src={"/dots.png"}
+            src={DotsImage}
             alt="dots"
             width={25}
             height={50}

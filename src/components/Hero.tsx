@@ -2,17 +2,23 @@
 import { Typewriter } from "react-simple-typewriter";
 import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { MatrixBG } from "@/assets";
 
 const Hero = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
   return (
-    <div className="w-full h-screen pt-24 p-10 max-lg:px-5 bg-secondary">
+    <motion.div
+      initial={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      whileInView={{ opacity: 1 }}
+      className="w-full h-screen pt-24 p-10 max-lg:px-5 bg-secondary"
+    >
       <div className="relative container w-full h-full overflow-hidden z-0">
         {/* Background matrix image */}
         <Image
-          src="/matrix.png"
+          src={MatrixBG}
           alt="matrix"
           fill
           className="opacity-70 object-cover -z-10"
@@ -70,7 +76,7 @@ const Hero = () => {
           position="right"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
