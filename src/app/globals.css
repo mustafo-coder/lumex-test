@@ -1,12 +1,23 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-poppins: var(--font-poppins);
+  --font-orbitron: var(--font-orbitron);
+  --font-ibm: var(--font-ibm);
+  --color-primary: #07E0B0;
+  --color-secondary: #030F0A;
 }
-canvas.splinecanvas {
-  background: transparent !important;
-  pointer-events: none; /* Agar foydalanuvchi hech narsa bilan o‘zaro aloqada bo‘lmasin desa */
+
+body {
+  overflow-x: hidden;
+  background: #030F0A;
 }
-canvas.splinecanvas {
-  background: transparent !important;
+
+.custom-animate-spin {
+  animation: custom-animate-spin 2s linear infinite;
+}
+
+@keyframes custom-animate-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -1,0 +1,1 @@
+export { default as MatrixImage } from './matrix.png'

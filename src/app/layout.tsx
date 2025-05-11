@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Orbitron, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
   subsets: ["latin"],
-  weight: ["100", "300", "400", "600", "500", "800", "900", "700"],
+  weight: ["400", "600", "500", "800", "900", "700"],
+});
+const ibm = IBM_Plex_Sans({
+  variable: "--font-ibm",
+  subsets: ["latin"],
+  weight: ["700", "300", "500", "600", "200"],
 });
 
 export const metadata: Metadata = {
@@ -20,7 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-poppins antialiased`}>{children}</body>
+      <body
+        className={`${orbitron.variable} ${ibm.variable} font-ibm antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
