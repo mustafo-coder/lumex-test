@@ -8,15 +8,12 @@ const Hero = () => {
   return (
     <motion.div className="w-full h-screen snap-start px-10 pb-5 max-md:px-5 pt-20 bg-secondary">
       <div className="relative container w-full h-full overflow-hidden z-0">
-        {/* Background matrix image */}
         <Image
           src={MatrixBG}
           alt="matrix"
           fill
           className="opacity-70 object-cover -z-10 pointer-events-none select-none"
         />
-
-        {/* Text Section */}
         <motion.div
           aria-label="Title Section"
           className="flex uppercase max-lg:flex-col font-bold justify-between text-[#E4E4E4] py-5 px-10 max-md:px-5 max-[500px]:py-18 max-sm:px-2 font-orbitron max-lg:h-full"
@@ -66,11 +63,7 @@ const Hero = () => {
             </motion.h2>
           </div>
         </motion.div>
-
-        {/* Corners */}
         {corners()}
-
-        {/* Info Cards */}
         <InfoCard
           text={`With elite engineering talent and deep industry expertise, we build digital products that drive growth and innovation.`}
           position="left"
@@ -83,15 +76,6 @@ const Hero = () => {
     </motion.div>
   );
 };
-
-const textMotion = (direction: "left" | "right") => ({
-  hidden: { opacity: 0, x: direction === "left" ? -400 : 400 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 1, delay: 0.4 },
-  },
-});
 
 const corners = () => (
   <>

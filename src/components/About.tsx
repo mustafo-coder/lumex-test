@@ -31,7 +31,6 @@ const About = () => {
             hasAnimated ? "opacity-100" : "opacity-0"
           }`}
         >
-          {/* Title */}
           <motion.h2
             aria-label="About Title"
             initial={{ opacity: 0, y: 100 }}
@@ -43,16 +42,12 @@ const About = () => {
             Driven by passion <br />
             defind by excellence
           </motion.h2>
-
-          {/* About btn */}
           <button
             aria-label="More about link"
             className="absolute bottom-10 left-1/2 -translate-x-1/2 btn"
           >
             <span>[</span> about <span>]</span>
           </button>
-
-          {/* Code blocks */}
           {type && (
             <>
               <CodeBlock
@@ -74,8 +69,6 @@ const About = () => {
               />
             </>
           )}
-
-          {/* Cordinate lines */}
           <Image
             src={TopLine}
             alt="top line"
@@ -90,8 +83,6 @@ const About = () => {
             width={1920}
             height={30}
           />
-
-          {/* Animation frame */}
           <motion.div
             initial={{ display: "block" }}
             whileInView={{ display: "none" }}
