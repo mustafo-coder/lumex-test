@@ -7,14 +7,11 @@
   --color-secondary: #030F0A;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-}
 
 body {
-  min-width: 500px;
+  min-width: 330px;
   overflow-x: hidden;
+  background-blend-mode: multiply;
   background: #030F0A url('/bg-code.png') no-repeat center/cover;
 }
 
@@ -30,7 +27,7 @@ body {
 
 @layer components {
   .btn {
-    @apply cursor-pointer relative border-2 border-primary px-8 py-3 rounded text-white/80 flex gap-2 transition-all bg-secondary;
+    @apply cursor-pointer max-md:text-sm relative border-2 border-primary px-8 py-3 rounded text-white/80 flex gap-2 transition-all bg-secondary;
   }
 
   .btn:hover span:first-child {
@@ -55,12 +52,45 @@ body {
 }
 
 
-.custom-animate-spin {
-  animation: custom-animate-spin 2s linear infinite;
+canvas {
+  transition: .5s ease;
 }
 
-@keyframes custom-animate-spin {
-  to {
-    transform: rotate(360deg);
+.anim canvas {
+  transform: scale(.7);
+}
+
+@media (max-width: 1080px) {
+
+  canvas {
+    transform: scale(0.9);
+  }
+
+  .anim canvas {
+    transform: scale(.6);
+  }
+}
+
+@media (max-width: 768px) {
+
+  canvas {
+    transform: scale(0.8);
+  }
+
+  .anim canvas {
+    transform: scale(.6);
+  }
+}
+
+@media (max-width: 568px) {
+
+  canvas {
+    width: 120% !important;
+    max-width: none !important;
+    transform: scale(0.7);
+  }
+
+  .anim canvas {
+    transform: scale(.5);
   }
 }

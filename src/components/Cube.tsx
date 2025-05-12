@@ -1,18 +1,23 @@
 "use client";
 import Spline from "@splinetool/react-spline";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Cube = () => {
+const Cube = ({ scroll }: { scroll: boolean }) => {
   const [loaded, setLoaded] = useState(false);
-
   return (
-    <Spline
-      className={`fixed max-lg:scale-90 max-md:scale-75 top-1/2 z-40 transition-opacity duration-700 left-1/2 -translate-x-[52%] -translate-y-[44%] pointer-events-none select-none ${
+    <div
+      className={`${
         loaded ? "opacity-100" : "opacity-0"
+      } fixed flex items-center justify-center top-1/2 w-full h-full z-40 transition-opacity duration-700 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none ${
+        scroll ? "anim" : ""
       }`}
-      scene="https://prod.spline.design/fUHEUhHuYtHbRJEK/scene.splinecode"
-      onLoad={() => setLoaded(true)}
-    />
+    >
+      <Spline
+        className="flex justify-center items-center w-full h-full"
+        scene="https://prod.spline.design/fUHEUhHuYtHbRJEK/scene.splinecode"
+        onLoad={() => setLoaded(true)}
+      />
+    </div>
   );
 };
 
