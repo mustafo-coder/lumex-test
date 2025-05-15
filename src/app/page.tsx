@@ -37,13 +37,13 @@ const Page = () => {
 
   return (
     <div>
-      <Cube scroll={scroll} />
       <div
         ref={containerRef}
         onWheel={wheelHandler}
         onScroll={scrollHandler}
         className="h-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory scroll-smooth"
       >
+        <Cube scroll={scroll} />
         <section className="snap-start h-screen">
           <Hero />
         </section>
